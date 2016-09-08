@@ -1,9 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
     <title>Lunch Checker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <meta charset="utf-8">
     <style>
         .message {
             font-size: 1.3em;
@@ -11,21 +14,24 @@
         }
     </style>
 </head>
-<body>
-<div class="container">
+<body data-ng-app="LunchCheck">
+<div class="container" data-ng-controller="LunchCheckController">
     <h1>Lunch Checker</h1>
+    <form name="lunchForm">
+        <div class="form-group" ng-class="{ 'has-error': lunchForm.lunch.$invalid }">
+            <input id="lunch-menu" type="text" name="lunch"
+                   placeholder="list comma separated dishes you usually have for lunch"
+                   class="form-control" ng-model="lunch" required autofocus>
+    </div>
 
     <div class="form-group">
-        <input id="lunch-menu" type="text"
-               placeholder="list comma separated dishes you usually have for lunch"
-               class="form-control">
-    </div>
-    <div class="form-group">
-        <button class="btn btn-default">Check If Too Much</button>
+        <button data-ng-click="doLunchCheck()" class="btn btn-default">Check If Too Much</button>
     </div>
     <div class="form-group message">
         <!-- Your message can go here. -->
+        {{message}}
     </div>
+    </form>
 </div>
 
 </body>
