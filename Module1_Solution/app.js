@@ -9,10 +9,10 @@
     function LunchCheckController($scope) {
         $scope.lunch = "";
 
-        $scope.doLunchCheck = function () {
-            if ($scope.lunch.length == 0) {
+        $scope.doLunchCheck = function (isValid) {
+            if (!isValid) {
                 $scope.message = 'Please enter data first'
-            } else if ($scope.lunch.split(',').length <= 3) {
+            } else if (isValid && $scope.lunch.split(',').length <= 3) {
                 $scope.message = 'Enjoy!'
             } else {
                 $scope.message = 'Too much!'

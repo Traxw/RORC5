@@ -1,0 +1,22 @@
+.message {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+input.ng-valid {
+    color: #000000;
+    border-color: #008000;
+}
+
+input.ng-invalid {
+    color: #000000;
+    border-color: #ff0000;
+}
+
+.ng-valid {
+    color: #008000;
+}
+
+.ng-invalid {
+    color: #ff0000;
+}
