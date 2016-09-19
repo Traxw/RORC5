@@ -18,7 +18,7 @@
 
     <form name="lunchForm" data-ng-submit="doLunchCheck(lunchForm.$valid)" novalidate>
 
-        <div class="form-group" ng-class="{ 'has-error': lunchForm.lunch.$invalid">
+        <div class="form-group" ng-class="{ 'has-error': lunchForm.lunch.$invalid }">
             <input id="lunch-menu" type="text" name="lunch"
                    placeholder="list comma separated dishes you usually have for lunch"
                    class="form-control" ng-model="lunch" required autofocus>
